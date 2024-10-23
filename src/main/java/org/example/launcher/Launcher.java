@@ -10,7 +10,7 @@ public class Launcher {
     public static void main(String[] args) {
         UserService userService = new UserService();
         Client client = new Client();
-        client.setId(11);
+        client.setId(12);
         client.setName("John Doe");
         Planet planet = new Planet();
         planet.setId("MOON");
@@ -19,9 +19,11 @@ public class Launcher {
         userService.savePlanet(planet);*/
         /*userService.deleteClient(client);
         userService.deletePlanet(planet);*/
-        Client client1 = userService.findByIdClient(5);
+        /*Client client1 = userService.findByIdClient(5);
         System.out.println(client1);
         Planet planet1 = userService.findByIdPlanet("SAT");
-        System.out.println(planet1);
+        System.out.println(planet1);*/
+        userService.updateClient(client);
+        userService.updatePlanet(planet);
     }
 }

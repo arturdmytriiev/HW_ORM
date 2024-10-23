@@ -30,4 +30,12 @@ public class PlanetDao {
             return session.get(Planet.class, id);
         }
     }
+
+    public void update (Planet planet) {
+        try(Session session = sessionFactory.openSession()) {
+            Transaction transaction = session.beginTransaction();
+            session.update(planet);
+            transaction.commit();
+        }
+    }
 }

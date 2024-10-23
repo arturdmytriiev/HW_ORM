@@ -30,4 +30,12 @@ public class ClientDao {
             return session.get(Client.class, id);
         }
     }
+
+    public void update (Client client) {
+        try(Session session = sessionFactory.openSession()) {
+            Transaction transaction = session.beginTransaction();
+            session.update(client);
+            transaction.commit();
+        }
+    }
 }

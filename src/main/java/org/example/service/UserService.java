@@ -33,5 +33,13 @@ public class UserService {
         return clientDao.get(id);
     }
 
+    public void updateClient(Client client) {
+        clientDao.update(client);
+    }
+
+    public void updatePlanet(Planet planet) {
+        planetDao.update(planet);
+    }
+
 
 }
